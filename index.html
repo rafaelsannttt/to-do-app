@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do List</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      color: #333;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: #007BFF;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Formulário */
+    .form-section form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .form-section input[type="text"],
+    .form-section select {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .form-section button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .form-section button:hover {
+      background: #0056b3;
+    }
+
+    /* Lista de tarefas */
+    .list-section ul {
+      list-style: none;
+    }
+
+    .list-section li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .list-section label {
+      flex: 1;
+      margin-left: 10px;
+    }
+
+    .priority {
+      margin-left: 10px;
+      font-size: 0.9em;
+      font-weight: bold;
+    }
+
+    .priority.alta {
+      color: red;
+    }
+
+    .priority.media {
+      color: orange;
+    }
+
+    .priority.baixa {
+      color: green;
+    }
+
+    /* Estilo para concluídas */
+    input[type="checkbox"]:checked + label {
+      text-decoration: line-through;
+      color: #aaa;
+    }
+
+    /* Botão remover */
+    .remove {
+      background: #dc3545;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .remove:hover {
+      background: #a71d2a;
+    }
+
+    /* Responsividade */
+    @media (max-width: 480px) {
+      .form-section form {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Minha To-Do List</h1>
+  </header>
+  <main>
+    <!-- Formulário -->
+    <section class="form-section">
+      <form>
+        <input type="text" placeholder="Digite a tarefa..." required>
+        <select>
+          <option value="alta">Alta</option>
+          <option value="media">Média</option>
+          <option value="baixa">Baixa</option>
+        </select>
+        <button type="submit">Adicionar</button>
+      </form>
+    </section>
+
+    <!-- Lista de tarefas -->
+    <section class="list-section">
+      <ul id="taskList">
+        <li>
+          <input type="checkbox" id="tarefa1">
+          <label for="tarefa1">Estudar HTML e CSS</label>
+          <span class="priority alta">Alta</span>
+          <button class="remove">Remover</button>
+        </li>
+        <li>
+          <input type="checkbox" id="tarefa2">
+          <label for="tarefa2">Praticar Flexbox</label>
+          <span class="priority media">Média</span>
+          <button class="remove">Remover</button>
+        </li>
+        <li>
+          <input type="checkbox" id="tarefa3">
+          <label for="tarefa3">Organizar workspace</label>
+          <span class="priority baixa">Baixa</span>
+          <button class="remove">Remover</button>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="adicionar.js"></script>
+</body>
+</html>
