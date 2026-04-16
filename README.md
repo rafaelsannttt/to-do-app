@@ -1,6 +1,6 @@
 # to-do-app
 
-# 📋 Minha To-Do List
+# 📋 Minha To-Do List utilizando a IA para reproduzir um TO-DO-APP
 
 Uma aplicação simples de lista de tarefas feita com **HTML, CSS e JavaScript**.  
 Permite adicionar tarefas, marcar como concluídas, definir prioridade (Alta, Média, Baixa) e remover itens.
